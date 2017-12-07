@@ -8,7 +8,19 @@
 </head>
 <body ng-app="ParkingApp" ng-controller="ParkingCtrl as pCtrl">
 
-	<div>{{ pCtrl.test }}</div>
+	<div id="parking_lot">
+		<div class="vertical_thing top-left"></div>
+		<div class="vertical_thing bottom-left"></div>
+		<div class="vertical_thing top-right"></div>
+		<div class="vertical_thing bottom-right"></div>
+		<div class="horizontal_thing top"></div>
+		<div class="horizontal_thing bottom"></div>
+		<div id="parking_slot_top" class="slot-1"></div>
+		<div id="parking_slot_top" class="slot-2"></div>
+		<div id="parking_slot_top" class="slot-3"></div>
+		<div id="parking_slot_top" class="slot-4"></div>
+
+	</div>
 
 	<!-- Librerias -->
 	<script type="text/javascript" src="assets/bower_components/jquery/dist/jquery.min.js"></script>

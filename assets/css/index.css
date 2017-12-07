@@ -1,0 +1,72 @@
+#parking_lot {
+  width: 800px;
+  height: 600px;
+  position: relative;
+  background-color: #a0a0a0;
+  z-index: -2;
+}
+#parking_lot div {
+  position: absolute;
+}
+.vertical_thing {
+  background-color: #42f474;
+  height: 200px;
+  width: 50px;
+  border: #fff solid;
+  z-index: -1;
+}
+.vertical_thing.top-left {
+  top: 0px;
+  left: 0px;
+  border-width: 0px 5px 5px 0px;
+}
+.vertical_thing.bottom-left {
+  bottom: 0px;
+  left: 0px;
+  border-width: 5px 5px 0px 0px;
+}
+.vertical_thing.top-right {
+  top: 0px;
+  right: 0px;
+  border-width: 0px 0px 5px 5px;
+}
+.vertical_thing.bottom-right {
+  bottom: 0px;
+  right: 0px;
+  border-width: 5px 0px 0px 5px;
+}
+.horizontal_thing {
+  background-color: #42f474;
+  width: 710px;
+  height: 50px;
+  left: 45px;
+  border: #fff solid;
+  z-index: 1;
+}
+.horizontal_thing.top {
+  top: 0px;
+  border-width: 0px 0px 5px 0px;
+}
+.horizontal_thing.bottom {
+  bottom: 0px;
+  border-width: 5px 0px 0px 0px;
+}
+#parking_slot_top {
+  border: #fff dashed;
+  border-width: 0px 5px 0px 0px;
+  top: 50px;
+  width: 140px;
+  height: 150px;
+}
+#parking_slot_top.slot-1 {
+  left: 50px;
+}
+#parking_slot_top.slot-2 {
+  left: 190px;
+}
+#parking_slot_top.slot-3 {
+  left: 330px;
+}
+#parking_slot_top.slot-4 {
+  left: 470px;
+}
