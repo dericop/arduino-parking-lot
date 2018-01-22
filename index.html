@@ -6,19 +6,217 @@
 	<link rel="stylesheet" type="text/css" href="assets/bower_components/bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/index.css">
 </head>
-<body ng-app="ParkingApp" ng-controller="ParkingCtrl as pCtrl">
 
+
+<body ng-app="ParkingApp" ng-controller="ParkingCtrl as pCtrl" ng-cloak>
+
+
+	<div class="slots-counter">
+		<div class="slots-container">
+			<div class="support-thing">
+				<div class="top-dec"></div>
+				<div class="medium-dec"></div>
+				<div class="bottom-dec"></div>
+			</div>
+			<div class="slots-screen">
+				<div class="top-screen">
+					<h4>Espacios Disponibles</h4>
+				</div>
+
+				<div class="bottom-screen">
+					<h4>{{pCtrl.quantity}}</h4>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="barcode-counter">
+		<div class="barcode-container">
+			<div class="support-thing">
+				<div class="top-dec"></div>
+				<div class="medium-dec"></div>
+				<div class="bottom-dec"></div>
+			</div>
+			<div class="barcode-screen">
+				<div class="top-screen">
+					<input class="form-control" type="text" placeholder="Código de barras" ng-model="pCtrl.code">
+				</div>
+
+				<div class="bottom-screen">
+					<button class="btn btn-primary" type="text" ng-click="pCtrl.validateCode()">Validar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
 	<div id="parking_lot">
+
+		<div class="stick-lights">
+			<div class="top-lights">
+				<div class="light light-1" ng-class="{'on': pCtrl.lightsOn }"></div>
+				<div class="light light-2" ng-class="{'on': pCtrl.lightsOn }"></div>
+				<div class="light light-3" ng-class="{'on': pCtrl.lightsOn }"></div>
+				<div class="light light-4" ng-class="{'on': pCtrl.lightsOn }"></div>
+			</div>
+			<div class="bottom-lights">
+				<div class="light light-2" ng-class="{'on': pCtrl.lightsOn }"></div>
+				<div class="light light-3" ng-class="{'on': pCtrl.lightsOn }"></div>
+			</div>
+
+		</div>
+	
 		<div class="vertical_thing top-left"></div>
+		<div class="door"></div><!-- opened --> 
 		<div class="vertical_thing bottom-left"></div>
+
 		<div class="vertical_thing top-right"></div>
 		<div class="vertical_thing bottom-right"></div>
+		
 		<div class="horizontal_thing top"></div>
+		<div class="door-exit"></div><!-- opened --> 
 		<div class="horizontal_thing bottom"></div>
-		<div id="parking_slot_top" class="slot-1"></div>
-		<div id="parking_slot_top" class="slot-2"></div>
-		<div id="parking_slot_top" class="slot-3"></div>
-		<div id="parking_slot_top" class="slot-4"></div>
+		
+		<div id="parking_slot_top" class="slot-1">
+			<div class="decorators-c">
+				<div class="top-dec"></div>
+
+				<div class="bott-dec"></div>
+			</div>
+
+			<div class="car-slot">
+				
+			</div>
+		</div>
+
+		<div id="parking_slot_top" class="slot-2">
+			<div class="decorators-c">
+				<div class="top-dec"></div>
+
+				<div class="bott-dec"></div>
+			</div>
+
+			<div class="car-slot">
+				
+			</div>
+		</div>
+
+		<div id="parking_slot_top" class="slot-3">
+			<div class="decorators-c">
+				<div class="top-dec"></div>
+
+				<div class="bott-dec"></div>
+			</div>
+
+			<div class="car-slot" >
+				
+			</div>
+
+		</div>
+
+		<div id="parking_slot_top" class="slot-4">
+			<div class="decorators-c">
+				<div class="top-dec"></div>
+
+				<div class="bott-dec"></div>
+			</div>
+
+			<div class="car-slot" ng-class="{'fill': pCtrl.v2Assigned}">
+				
+			</div>
+		</div>
+
+
+		<div id="parking_slot_bottom" class="slot-1">
+			<div class="decorators-c">
+				<div class="top-dec"></div>
+
+				<div class="bott-dec"></div>
+			</div>
+
+			<div class="car-slot">
+				
+			</div>
+		</div>
+
+		<div id="parking_slot_bottom" class="slot-2">
+			<div class="sky">
+				
+			</div>
+			<div class="decorators-c">
+				<div class="top-dec"></div>
+
+				<div class="bott-dec"></div>
+			</div>
+
+			<div class="car-slot" ng-class="{'fill': pCtrl.v3Assigned}">
+				
+			</div>
+		</div>
+
+		<div id="parking_slot_bottom" class="slot-3">
+			<div class="decorators-c">
+				<div class="top-dec"></div>
+
+				<div class="bott-dec"></div>
+			</div>
+
+			<div class="car-slot">
+				
+			</div>
+		</div>
+		
+		<div id="parking_slot_bottom" class="slot-4">
+			<div class="decorators-c">
+				<div class="top-dec"></div>
+
+				<div class="bott-dec"></div>
+			</div>
+
+			<div class="car-slot" ng-class="{'fill': pCtrl.v1Assigned}">
+				
+			</div>
+		</div>
+
+	</div>
+
+	<div class="options-container">
+
+		<div class="options-r">
+			<div class="top-dec">
+				<div class="bar top-bar-1"></div>
+				<div class="bar top-bar-2"></div>
+				<div class="bar top-bar-3"></div>
+			</div>
+			
+			<div class="options-menu">
+				<div class="border-1">
+					<div class="border-2">
+						<div class="border-3">
+							<div class="lights-c">
+								<h3>Luces</h3>
+								<div class="lights-t" ng-click="pCtrl.turnLightsOn()">
+									<div class="lights-slide" ng-class="{'opened': pCtrl.lightsOn }"> <!-- opened -->
+										
+									</div>
+								</div>
+							</div>
+
+							<div class="door-c door-1-c">
+								<h3>Entrada</h3>
+								<button class="door-btn" ng-click="pCtrl.openDoor()"></button>
+							</div>
+
+							<div class="door-c door-2-c">
+								<h3>Salida</h3>
+								<button class="door-btn" ng-click="pCtrl.openExit()"></button>
+							</div>
+
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
 	</div>
 
@@ -29,8 +227,11 @@
 	<script type="text/javascript" src="assets/bower_components/velocity/velocity.ui.js"></script>
 	<script type="text/javascript" src="assets/bower_components/angular/angular.min.js"></script>
 
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js" type="text/javascript"></script>
+
 	<!--Angular -->
-	<script type="text/javascript" src="app/app.js"></script>
-	<script type="text/javascript" src="app/ParkingCtrl.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+	<script type="text/javascript" src="ParkingCtrl.js"></script>
 </body>
 </html>

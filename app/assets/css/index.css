@@ -1,0 +1,504 @@
+body {
+  display: flex;
+  justify-content: center;
+  background-color: #42f474;
+}
+#parking_lot {
+  background-color: #1f1f1f;
+  border-radius: 10px;
+  height: 600px;
+  position: relative;
+  margin-top: 2.5em;
+  width: 800px;
+  z-index: -2;
+}
+#parking_lot div {
+  position: absolute;
+}
+.vertical_thing {
+  background-color: #000;
+  height: 200px;
+  width: 50px;
+  border: #fff solid;
+  z-index: -1;
+}
+.vertical_thing.top-left {
+  border-radius: 10px 0px 0px 0px;
+  top: 0px;
+  left: 0px;
+  border-width: 0px 5px 5px 0px;
+}
+.vertical_thing.bottom-left {
+  border-radius: 0px 0px 0px 10px;
+  bottom: 0px;
+  left: 0px;
+  border-width: 5px 5px 0px 0px;
+}
+.vertical_thing.top-right {
+  border-radius: 0px 10px 0px 0px;
+  top: 0px;
+  right: 0px;
+  border-width: 0px 0px 5px 5px;
+}
+.vertical_thing.bottom-right {
+  border-radius: 0px 0px 10px 0px;
+  bottom: 0px;
+  right: 0px;
+  border-width: 5px 0px 0px 5px;
+}
+.door {
+  background: repeating-linear-gradient(45deg, #daf30a, #716b06 10px, #000 10px, #000 20px);
+  height: 165px;
+  top: 200px;
+  width: 18px;
+  border-radius: 0 0 20px 20px;
+}
+.door.opened {
+  opacity: 0.3;
+}
+.door-exit {
+  background: repeating-linear-gradient(45deg, #daf30a, #716b06 10px, #000 10px, #000 20px);
+  height: 165px;
+  top: 200px;
+  right: 0;
+  width: 18px;
+  border-radius: 0 0 20px 20px;
+}
+.door-exit.opened {
+  opacity: 0.3;
+}
+.horizontal_thing {
+  background-color: #000;
+  width: 710px;
+  height: 50px;
+  left: 45px;
+  border: #fff solid;
+  z-index: 1;
+}
+.horizontal_thing.top {
+  top: 0px;
+  border-width: 0px 0px 5px 0px;
+}
+.horizontal_thing.bottom {
+  bottom: 0px;
+  border-width: 5px 0px 0px 0px;
+}
+#parking_slot_top {
+  border: #f2ff00 solid;
+  border-width: 0px 10px 0px 0px;
+  top: 50px;
+  width: 140px;
+  height: 150px;
+}
+#parking_slot_top .car-slot {
+  background-image: url("../img/car.png");
+  background-size: 175px 102px;
+  display: none;
+  height: 102px;
+  left: -20px;
+  top: 44px;
+  transform: rotate(-90deg);
+  width: 175px;
+}
+#parking_slot_top .car-slot.fill {
+  display: inherit !important;
+}
+#parking_slot_top.slot-1 {
+  left: 50px;
+}
+#parking_slot_top.slot-2 {
+  left: 190px;
+}
+#parking_slot_top.slot-3 {
+  left: 330px;
+}
+#parking_slot_top.slot-4 {
+  left: 470px;
+}
+#parking_slot_bottom {
+  border: #f2ff00 solid;
+  border-width: 0px 10px 0px 0px;
+  bottom: 50px;
+  width: 140px;
+  height: 150px;
+}
+#parking_slot_bottom .car-slot {
+  height: 102px;
+  width: 175px;
+  background-image: url("../img/car.png");
+  background-size: 175px 102px;
+  display: none;
+  transform: rotate(-90deg);
+  left: -20px;
+  top: 12px;
+  z-index: 1;
+}
+#parking_slot_bottom .car-slot.fill {
+  display: inherit !important;
+}
+#parking_slot_bottom.slot-1 {
+  left: 50px;
+}
+#parking_slot_bottom.slot-2 {
+  z-index: 2;
+  left: 190px;
+}
+#parking_slot_bottom.slot-2 .sky {
+  background: #f2ff00;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+#parking_slot_bottom.slot-2 .car-slot {
+  z-index: 1;
+}
+#parking_slot_bottom.slot-3 {
+  left: 330px;
+}
+#parking_slot_bottom.slot-4 {
+  left: 470px;
+}
+.decorators-c {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.decorators-c .top-dec {
+  position: absolute;
+  background-color: #000;
+  top: 0;
+  right: -10px;
+  width: 10px;
+  height: 23px;
+}
+.decorators-c .bott-dec {
+  position: absolute;
+  background-color: #000;
+  bottom: 0;
+  right: -10px;
+  width: 10px;
+  height: 23px;
+}
+.slots-counter {
+  position: absolute;
+  left: 21px;
+  top: 40px;
+}
+.slots-counter .slots-container {
+  position: relative;
+  height: 200px;
+  width: 230px;
+}
+.slots-counter .slots-container div {
+  position: absolute;
+}
+.slots-counter .slots-container .support-thing {
+  border-radius: 25px;
+  left: 0;
+  background: #000;
+  width: 10%;
+  height: 100%;
+  top: 20px;
+}
+.slots-counter .slots-container .support-thing .top-dec {
+  background: #000;
+  border-radius: 25px 0 0 25px;
+  height: 30px;
+  width: 60px;
+  left: -10px;
+}
+.slots-counter .slots-container .support-thing .medium-dec {
+  background: #000;
+  border-radius: 25px 0 0 25px;
+  height: 30px;
+  width: 60px;
+  left: -10px;
+  top: 90px;
+}
+.slots-counter .slots-container .support-thing .bottom-dec {
+  background: #000;
+  border-radius: 25px;
+  height: 30px;
+  width: 60px;
+  bottom: 0;
+  left: -37px;
+}
+.slots-counter .slots-container .slots-screen {
+  background: #114ddc;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.702);
+  left: 20%;
+  width: 80%;
+  height: 80%;
+}
+.slots-counter .slots-container .slots-screen .top-screen {
+  top: 0;
+  padding: 0 7px;
+}
+.slots-counter .slots-container .slots-screen .top-screen h4 {
+  border-radius: 5px;
+  color: #fff;
+  font-weight: 600;
+  padding: 12px;
+  border: 2px solid #fff;
+  text-align: center;
+  line-height: 22.5px;
+}
+.slots-counter .slots-container .slots-screen .bottom-screen {
+  padding: 0 7px;
+  bottom: 0px;
+}
+.slots-counter .slots-container .slots-screen .bottom-screen h4 {
+  font-size: 30px;
+  font-weight: 800;
+  border-radius: 6px;
+  color: #f46b6d;
+  background: #000;
+  height: 60px;
+  width: 167px;
+  text-align: center;
+  padding: 12px;
+}
+.barcode-counter {
+  position: absolute;
+  left: 21px;
+  top: 420px;
+}
+.barcode-counter .barcode-container {
+  position: relative;
+  height: 200px;
+  width: 230px;
+}
+.barcode-counter .barcode-container div {
+  position: absolute;
+}
+.barcode-counter .barcode-container .support-thing {
+  border-radius: 25px;
+  left: 0;
+  background: #000;
+  width: 10%;
+  height: 100%;
+  top: 20px;
+}
+.barcode-counter .barcode-container .support-thing .top-dec {
+  background: #000;
+  border-radius: 25px 0 0 25px;
+  height: 30px;
+  width: 60px;
+  left: -10px;
+}
+.barcode-counter .barcode-container .support-thing .medium-dec {
+  background: #000;
+  border-radius: 25px 0 0 25px;
+  height: 30px;
+  width: 60px;
+  left: -10px;
+  top: 90px;
+}
+.barcode-counter .barcode-container .support-thing .bottom-dec {
+  background: #000;
+  border-radius: 25px;
+  height: 30px;
+  width: 60px;
+  bottom: 0;
+  left: -37px;
+}
+.barcode-counter .barcode-container .barcode-screen {
+  background: #114ddc;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.702);
+  left: 20%;
+  width: 80%;
+  height: 80%;
+}
+.barcode-counter .barcode-container .barcode-screen .top-screen {
+  top: -20px;
+  padding: 0 7px;
+}
+.barcode-counter .barcode-container .barcode-screen .top-screen input {
+  height: 60px;
+  margin-top: 30px;
+}
+.barcode-counter .barcode-container .barcode-screen .bottom-screen {
+  padding: 0 7px;
+  bottom: 15px;
+}
+.barcode-counter .barcode-container .barcode-screen .bottom-screen button {
+  height: 60px;
+  width: 167px;
+}
+.options-container {
+  position: absolute;
+  right: 35px;
+  width: 200px;
+  height: 400px;
+}
+.options-container .options-r {
+  position: relative;
+}
+.options-container .options-r .top-dec {
+  position: absolute;
+  top: 0;
+  height: 50px;
+  width: 100%;
+}
+.options-container .options-r .top-dec .bar {
+  background: #000;
+  position: absolute;
+  height: 50px;
+  width: 25px;
+}
+.options-container .options-r .top-dec .top-bar-1 {
+  left: 47px;
+}
+.options-container .options-r .top-dec .top-bar-2 {
+  left: 87px;
+}
+.options-container .options-r .top-dec .top-bar-3 {
+  left: 126px;
+}
+.options-container .options-r .options-menu {
+  background: #a0a0a0;
+  position: absolute;
+  top: 50px;
+  width: 100%;
+  height: 300px;
+}
+.options-container .options-r .options-menu .border-1 {
+  border-top: 2px solid #000;
+  border-bottom: 2px solid #000;
+  border-left: 5px solid #000;
+  border-right: 5px solid #000;
+  height: 300px;
+  width: 100%;
+  padding: 10px;
+}
+.options-container .options-r .options-menu .border-2 {
+  background: #8c8a8a;
+  border-top: 3px solid #000;
+  border-bottom: 2px solid #000;
+  border-left: 2px solid #000;
+  border-right: 2px solid #000;
+  height: 275px;
+  width: 100%;
+  padding: 5px;
+}
+.options-container .options-r .options-menu .border-3 {
+  background: #676464;
+  border-top: 4px solid #000;
+  border-left: 4px solid #000;
+  border-right: 2px solid #000;
+  border-bottom: 2px solid #000;
+  height: 258px;
+  width: 100%;
+}
+.options-container .options-r .options-menu .border-3 .lights-c h3 {
+  color: rgba(255,255,255,0.729);
+  font-size: 17px;
+  text-align: center;
+  width: 100%;
+}
+.options-container .options-r .options-menu .border-3 .lights-c .lights-t {
+  background: #484848;
+  border-radius: 6px;
+  border-top: 1px solid #000;
+  border-left: 1px solid #000;
+  border-right: 3px solid #000;
+  border-bottom: 3px solid #000;
+  height: 18px;
+  width: 70px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  position: relative;
+}
+.options-container .options-r .options-menu .border-3 .lights-c .lights-t .lights-slide {
+  border: 1px solid #000;
+  border-radius: 6px;
+  background: #fff;
+  position: absolute;
+  height: 25px;
+  width: 10px;
+  top: -5px;
+  left: 10px;
+}
+.options-container .options-r .options-menu .border-3 .lights-c .lights-t .lights-slide.opened {
+  left: 50px !important;
+}
+.options-container .options-r .options-menu .border-3 .door-c h3 {
+  color: rgba(255,255,255,0.729);
+  font-size: 17px;
+  text-align: center;
+  width: 100%;
+}
+.options-container .options-r .options-menu .border-3 .door-c button {
+  background: #c10303;
+  border-radius: 25px;
+  position: absolute;
+  height: 35px;
+  width: 35px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.options-container .options-r .options-menu .border-3 .door-1-c {
+  margin-top: 10px;
+}
+.options-container .options-r .options-menu .border-3 .door-2-c {
+  margin-top: 60px;
+}
+.stick-lights {
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+.stick-lights .light {
+  background: #fff;
+  border-radius: 20px;
+  height: 25px;
+  width: 25px;
+}
+.stick-lights .light.on {
+  border: 4px solid #f00;
+}
+.stick-lights .bottom-lights {
+  height: 30px;
+  width: 555px;
+  position: absolute;
+  bottom: 10px;
+  margin-right: auto;
+  left: 50px;
+}
+.stick-lights .bottom-lights .light-1 {
+  left: 190px;
+}
+.stick-lights .bottom-lights .light-2 {
+  left: 330px;
+}
+.stick-lights .bottom-lights .light-3 {
+  left: 470px;
+}
+.stick-lights .top-lights {
+  height: 30px;
+  width: 555px;
+  position: absolute;
+  top: 10px;
+  margin-right: auto;
+  left: 50px;
+}
+.stick-lights .top-lights .light-1 {
+  left: 55px;
+}
+.stick-lights .top-lights .light-2 {
+  left: 190px;
+}
+.stick-lights .top-lights .light-3 {
+  left: 330px;
+}
+.stick-lights .top-lights .light-4 {
+  left: 470px;
+}
